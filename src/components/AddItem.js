@@ -5,6 +5,7 @@ import * as yup from "yup";
 import TextInput from "./TextInput";
 import TextArea from "./TextArea";
 import { useMissing } from "../context/MissingContext";
+import SelectField from "./SelectField";
 
 const AddItem = ({ email, close }) => {
   const { addMissingItem, uploadCoverImage, imageUrl, progress } = useMissing();
@@ -12,6 +13,7 @@ const AddItem = ({ email, close }) => {
   const initialValue = {
     name: "",
     description: "",
+    location: "",
     phone: "",
   };
   const formHandler = (e) => {
@@ -50,7 +52,7 @@ const AddItem = ({ email, close }) => {
             <TextInput
               label="phone"
               placeholder="Phone number"
-              value={formik.name}
+              value={formik.phone}
               name="phone"
               type="text"
             />
@@ -74,10 +76,11 @@ const AddItem = ({ email, close }) => {
                 onChange={formHandler}
               />
             </div>
+            <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS"]} />
             <TextArea
               label="Description"
-              placeholder="Enter your password"
-              value={formik.password}
+              placeholder="Enter your description"
+              value={formik.description}
               name="description"
               type="text"
             />
@@ -100,6 +103,7 @@ const registerSchema = yup.object().shape({
   name: yup.string().required("name is required"),
   description: yup.string().required("description is requried"),
   phone: yup.string().required("phone number is requried"),
+  location: yup.string().required("location is requried"),
 });
 
 export default AddItem;

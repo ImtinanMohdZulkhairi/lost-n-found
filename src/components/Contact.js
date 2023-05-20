@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import TextInput from "./TextInput";
 import { useAuth } from "../context/AuthContext";
+import SelectField from "./SelectField";
 
 const Contact = ({ item, close, changeState }) => {
   const { getUserInfo, userInfo } = useAuth();
@@ -12,14 +13,15 @@ const Contact = ({ item, close, changeState }) => {
     subject: `${item.name.toUpperCase()} Lost and Found Message Alert!` || "",
     id: item?.id || "",
     name: userInfo?.fullName || "",
+    location: item?.location || ""
   };
   const submitHandler = (values) => {
     emailjs
       .sendForm(
-        "service_77pfb4b",
+        "service_kmrbfbw",
         "template_rrch5p5",
         form.current,
-        "hwN3UmJ_zhoXKwJ9Z"
+        "2gER8q3A83kn3C_W5"
       )
       .then(
         (result) => {
@@ -83,6 +85,7 @@ const Contact = ({ item, close, changeState }) => {
                 }
                 name="subject"
               />
+              <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS"]} />
               <div className="space-x-2">
                 <button
                   className="text-lg px-6 py-3 bg-emerald-600 rounded-md text-white"

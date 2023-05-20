@@ -37,6 +37,7 @@ const Item = (item) => {
         </p>
         <p className="text-center font-semibold">Description</p>
         <p className="text-center">{item.item.description}</p>
+        <p className="text-center">{item.item.location || "KICT"}</p>
       </div>
       <div className="py-4 flex items-center justify-center p-4 text-sm ">
         {item.item.found ? null : (
