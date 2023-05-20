@@ -76,7 +76,7 @@ const AddItem = ({ email, close }) => {
                 onChange={formHandler}
               />
             </div>
-            <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS"]} />
+            <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS", "MASJID"]} />
             <TextArea
               label="Description"
               placeholder="Enter your description"

@@ -85,7 +85,7 @@ const Contact = ({ item, close, changeState }) => {
                 }
                 name="subject"
               />
-              <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS"]} />
+              <SelectField label="Location" value={formik.location} name="location" data={["CELPAD", "AIKOL", "KAED", "KENMS", "KOED", "KOE", "KICT", "KIRKHS", "MASJID"]} />
               <div className="space-x-2">
                 <button
                   className="text-lg px-6 py-3 bg-emerald-600 rounded-md text-white"
