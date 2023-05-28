@@ -3,7 +3,7 @@ import React from "react";
 const Features = () => {
   const features = [
     "Report Missing Items",
-    "RFID-based Sytem",
+    "Uses Email Notification System",
     "Register Items with Admin",
     "Search Based System",
   ];
